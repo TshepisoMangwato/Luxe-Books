@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Luxe Books | Online Book Store</title>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header class="hero">
+
+    <nav class="navbar container">
+
+      <a href="/" class="logo">
+        <span>Luxe</span> Books
+      </a>
+
+      <div class="nav-links">
+        <a href="#books">Books</a>
+      </div>
+
+    </nav>
+
+    <!-- Hero -->
+    <div class="hero-content container">
+
+      <p class="eyebrow">YOUR NEXT GREAT READ</p>
+
+      <h1>
+        Discover books that
+        <span>inspire you.</span>
+      </h1>
+
+      <p>
+        Explore fiction, technology, finance, self-development
+        and more in our beginner Book Store project.
+      </p>
+
+      <a href="#books" class="btn btn-primary">
+        Browse Books
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- Books -->
+    <section class="container books-section" id="books">
+
+      <div class="section-heading">
+
+        <div>
+          <p class="eyebrow">OUR COLLECTION</p>
+
+          <h2>Featured Books</h2>
+
+          <p>
+            Find your next book by title, author or category.
+          </p>
+        </div>
+
+        <span id="bookCount" class="count-badge">
+          0 books
+        </span>
+
+      </div>
+
+
+      <!-- Search -->
+      <div class="filters">
+
+        <div class="search-box">
+
+          <label for="searchInput">
+            Search Books
+          </label>
+
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="Search by title, author or category..."
+          >
+
+        </div>
+
+
+        <div class="filter-box">
+
+          <label for="categoryFilter">
+            Category
+          </label>
+
+          <select id="categoryFilter">
+
+            <option value="">
+              All categories
+            </option>
+
+            <option value="Fiction">
+              Fiction
+            </option>
+
+            <option value="Fantasy">
+              Fantasy
+            </option>
+
+            <option value="Technology">
+              Technology
+            </option>
+
+            <option value="Finance">
+              Finance
+            </option>
+
+            <option value="Self Development">
+              Self Development
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <button id="clearFilters" class="btn btn-secondary">
+          Clear
+        </button>
+
+      </div>
+
+
+      <div id="message" class="message"></div>
+
+
+      <div
+        id="booksContainer"
+        class="book-grid">
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer>
+
+    <div class="container footer-content">
+
+      <p>
+        <strong>BookNest</strong>
+        — 2026 &copy; All rights reserved.
+      </p>
+
+      <p>
+        Developed by <a href="https://github.com/naomithomas458-del" target="_blank"> Naomi Thomas</a>
+        and <a href="https://github.com/TshepisoMangwato" target="_blank">Tshepiso Mangwato</a>
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="js/app.js"></script>
+
+</body>
+</html>
