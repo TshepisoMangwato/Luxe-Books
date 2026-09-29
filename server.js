@@ -122,13 +122,20 @@ app.get("/api/books/:id", (req, res) => {
 });
 
 
-
-
-// Handle unknown routes
+// 404 page for unknown website routes
 app.use((req, res) => {
-    res.status(404).json({
-        message: "404 - Page not found"
-    });
+  res.status(404).sendFile(
+    path.join(__dirname, "public", "404.html")
+  );
+});
+
+
+// Unknown API route
+app.use("/api", (req, res) => {
+  res.status(404).json({
+    success: false,
+    message: "API route not found"
+  });
 });
 
 // Start server
