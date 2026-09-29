@@ -133,9 +133,25 @@ function displayBooks(books) {
               By ${escapeHtml(book.author)}
             </p>
 
+            <div class="book-details">
+            <span>Published: ${book.year}</span>
+             <span>⭐ ${book.rating}</span>
+             </div>
+
+
             <p class="book-description">
               ${escapeHtml(book.description)}
             </p>
+            
+            
+            <p class="book-tags">
+            ${book.tags ? book.tags.map(tag => escapeHtml(tag)).join(", ") : "No tags"}
+            </p>
+
+            <p class="availability">
+            ${book.isAvailable ? "Available" : "Currently unavailable"}
+            </p>
+
 
 
             <div class="book-bottom">

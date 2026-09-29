@@ -68,23 +68,26 @@ app.get("/api/books", (req, res) => {
   });
 });
 
-// GET one book
-app.get("/api/books/:id", (req, res) => {
-  const id = Number(req.params.id);
+// Get books by category
+app.get("/api/books/category/:category", (req, res) => {
+    const category = req.params.category.toLowerCase();
 
-  const book = books.find((item) => item.id === id);
+    const results = books.filter(book =>
+        book.category.toLowerCase() === category
+    );
 
-  if (!book) {
-    return res.status(404).json({
-      success: false,
-      message: "Book not found"
+    if (results.length === 0) {
+        return res.status(404).json({
+            success: false,
+            message: "No books found for this category"
+        });
+    }
+
+    res.json({
+        success: true,
+        count: results.length,
+        data: results
     });
-  }
-
-  res.json({
-    success: true,
-    data: book
-  });
 });
 
 
@@ -93,23 +96,33 @@ app.get("/api/books/random", (req, res) => {
     const randomIndex = Math.floor(Math.random() * books.length);
     const randomBook = books[randomIndex];
 
-    res.json(randomBook);
+    res.json({
+        success: true,
+        data: randomBook
+    });
 });
 
 // Get a book by ID
 app.get("/api/books/:id", (req, res) => {
     const id = Number(req.params.id);
 
-    const book = books.find(book => book.id === id);
+    const book = books.find((item) => item.id === id);
 
     if (!book) {
         return res.status(404).json({
+            success: false,
             message: "Book not found"
         });
     }
 
-    res.json(book);
+    res.json({
+        success: true,
+        data: book
+    });
 });
+
+
+
 
 // Handle unknown routes
 app.use((req, res) => {

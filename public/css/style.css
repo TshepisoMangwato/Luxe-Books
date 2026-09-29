@@ -675,3 +675,61 @@ footer {
     flex-direction: column;
   }
 }
+
+/* API Endpoints */
+
+.api-section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.api-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.api-links a {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 20px;
+  border: 1px solid #e5e1dc;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #2f2a26;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.api-links a::before {
+  content: "GET";
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #ffffff;
+  background: #2f2a26;
+  padding: 5px 9px;
+  border-radius: 5px;
+}
+
+.api-links a:hover {
+  background: #f3eee8;
+  border-color: #b8a99a;
+  color: #8a6848;
+  transform: translateX(5px);
+}
+
+.book-details {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 12px 0;
+  font-size: 14px;
+  color: #777;
+}
+
+.book-details span:last-child {
+  font-weight: 600;
+}
